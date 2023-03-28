@@ -1,0 +1,124 @@
+Ejercicio 1 y 2
+package com.pjs;
+
+import java.util.Scanner;
+public class EjercicioClase4 {
+
+	public String nombre;
+	public String apellido;
+	public int edad;
+	
+	Scanner lectura = new Scanner(System.in);
+	
+	
+	public static void main(String[] args) {
+		Scanner lectura = new Scanner(System.in);
+
+		
+		System.out.println("Ingrese su nombre: ");
+		String nombre = lectura.next();
+		
+		System.out.println("Ingrese su apellido: ");
+		String apellido = lectura.next();
+		
+		System.out.println("Ingrese su edad: ");
+		int edad = lectura.nextInt();
+		
+		System.out.println("Su nombre es: "+nombre);
+		System.out.println("Su apellido es: "+apellido);
+		System.out.println("Su edad es: "+edad);
+		
+		if(edad>=18) {
+			System.out.println(nombre+ " es mayor de edad.");}
+		else {
+			System.out.println(nombre+ " es menor de edad.");
+		}
+		
+	}
+
+}
+
+Ejercicio 3
+
+package main;
+
+import java.util.*;
+
+public class ejercicio4 {
+	
+	public static void main(String[] args) {
+		
+	Scanner date = new Scanner(System.in);
+	int option;
+	
+	do {
+		
+		System.out.println("Elija una de las siguientes categorías con descuento: ");
+		System.out.println("1. Verduras");
+		System.out.println("2. Frutas ");
+		System.out.println("3. Gaseosas");
+		System.out.println("4. Salir ");
+		option = date.nextInt();
+
+		switch (option) { 	
+		case 1:
+			System.out.println("Usted seleccionó la categoría: 'Verduras'.");
+			buy("Verduras", date);
+			break;
+		case 2:
+			System.out.println("Usted seleccionó la categoría: 'Frutas'.");
+			buy("Frutas", date);
+			break;
+		case 3: 
+			System.out.println("Usted seleccionó la categoría: 'Gaseosas'.");
+			buy("Gaseosas", date);
+			break;
+		case 4:
+			System.out.println("Hasta luego!!");
+			break;
+			}
+		} while (option !=4 );
+		
+
+	}
+	
+	public static void buy(String categoria, Scanner date) {
+		
+		String cliente,producto;
+		double precio,total,descuento = 0,preciototal;
+		int cantidad;
+		
+		System.out.println("Ingrese el nombre del cliente ");
+		cliente = date.next();
+		
+		System.out.println("Ingrese el nombre del producto: ");
+		producto = date.next();
+		
+		System.out.println("Ingrese el precio del producto: ");
+		precio = date.nextDouble();
+		
+		System.out.println("Ingrese la cantidad: ");
+		cantidad = date.nextInt();
+		
+		total = precio * cantidad;
+		
+		if (total > 1000) {
+			descuento = (total * 0.20);
+		}
+		
+		preciototal = total - descuento;
+		
+		System.out.println("Resumen de su compra: ");
+		System.out.println("Cliente: "+cliente);
+		System.out.println("Categoría: "+categoria);
+		System.out.println("Producto: "+producto);
+		System.out.println("Cantidad: "+cantidad);
+		System.out.println("Precio: $"+precio);
+		System.out.println("Descuento: $"+descuento);
+		System.out.println("Total a pagar: $"+preciototal);
+		System.out.println("Gracias por su compra!!!");
+
+
+	}
+	
+}
